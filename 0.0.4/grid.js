@@ -21,7 +21,7 @@ const chain = (callback=()=>{},mouseX,mouseY,arr,gap=50) => {
   else{
     const last = arr[arr.length-1];
 
-    const d = Math.sqrt((mouseX-last.x)*(mouseY-last.y));
+    const d = Math.sqrt(Math.pow(mouseX-last.x,2)+Math.pow(mouseY-last.y,2));
 
     if(d>=gap){
       const ratio = gap/d;
