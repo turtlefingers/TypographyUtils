@@ -1,4 +1,4 @@
-const grid = (callback=()=>{},gap=50) => {
+function grid(callback=function(){},gap=50){
   for(let y=0; y<height; y+=gap){
     for(let x=0; x<width; x+=gap){
       callback(x,y);
@@ -6,7 +6,7 @@ const grid = (callback=()=>{},gap=50) => {
   }
 }
 
-const gridTriangle = (callback = () => {}, gap = 50) => {
+function gridTriangle(callback=function(){}, gap = 50){
   const verticalGap = Math.sqrt(3) / 2 * gap;
   
   for (let y = 0; y <= height; y += verticalGap) {
@@ -19,7 +19,7 @@ const gridTriangle = (callback = () => {}, gap = 50) => {
 };
 
 
-const chain = (callback=()=>{},mouseX,mouseY,arr,gap=50) => {
+function  chain(callback=function(){}, mouseX, mouseY, arr, gap=50){
   if(arr.length==0)callback(mouseX,mouseY);
   else{
     const last = arr[arr.length-1];
@@ -35,3 +35,6 @@ const chain = (callback=()=>{},mouseX,mouseY,arr,gap=50) => {
   }
 }
 
+function snap(value, size){
+  return Math.floor(value / size) * size + size/2;
+}
